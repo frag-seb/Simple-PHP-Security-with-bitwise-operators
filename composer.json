@@ -1,0 +1,20 @@
+{
+
+    "name": "bitwiseoperators/security",
+    "type": "library",
+    "description": "Simple PHP Security with bitwise operators",
+    "keywords": ["Simple-PHP-Security", "PHP","bitwise operators"],
+    "license": "MIT",
+    "homepage": "http://www.frag-seb.de",
+    "authors": [
+        {
+            "name": "Jochen Mandl",
+            "email": "mandl.js@googlemail.com"
+        }
+    ],
+    "require": {
+        "symfony/class-loader": "~2.6",
+        "phpunit/phpunit": "~4.5"
+    }
+
+}
