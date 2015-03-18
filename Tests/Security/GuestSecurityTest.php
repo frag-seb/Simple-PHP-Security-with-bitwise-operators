@@ -1,17 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jochen.mandl
- * Date: 12.03.2015
- * Time: 19:57
- */
-
 namespace Tests\Security;
 
 use Security\GuestSecurity;
 
 /**
  * Class GuestSecurityTest
+ *
+ * @autor       -  jochen.mandl / mandl.js@googlemail.com
+ * @date        -  12.03.2015
+ * @time        -  19:57
+ * @description -
+ *
  * @package Tests\Security
  */
 class GuestSecurityTest  extends \PHPUnit_Framework_TestCase
@@ -22,7 +21,7 @@ class GuestSecurityTest  extends \PHPUnit_Framework_TestCase
     private $guest;
 
     /**
-     * @method setUp
+     * @see GuestSecurityTest::setUp()
      *
      */
     protected function setUp()
@@ -31,7 +30,7 @@ class GuestSecurityTest  extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method expectedGroups
+     * @see GuestSecurityTest::expectedGroups()
      *
      * @return array
      */
@@ -56,9 +55,12 @@ class GuestSecurityTest  extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testGuestSecurityHasPermissionReadPost
+     * @see GuestSecurityTest::testGuestSecurityHasPermissionReadPost()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertTrue
      */
     public function testGuestSecurityHasPermissionReadPost($expected)
     {
@@ -66,9 +68,12 @@ class GuestSecurityTest  extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testGuestSecurityHasPermissionReadUser
+     * @see GuestSecurityTest::testGuestSecurityHasPermissionReadUser()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertTrue
      */
     public function testGuestSecurityHasPermissionReadUser($expected)
     {
@@ -76,9 +81,12 @@ class GuestSecurityTest  extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testGuestSecurityRemoveGroup
+     * @see GuestSecurityTest::testGuestSecurityRemoveGroup()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertTrue
      */
     public function testGuestSecurityRemoveGroup($expected)
     {
@@ -86,9 +94,12 @@ class GuestSecurityTest  extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testGuestSecurityRemoveGroupThenHasNotPermission
+     * @see GuestSecurityTest::testGuestSecurityRemoveGroupThenHasNotPermission()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertFalse
      */
     public function testGuestSecurityRemoveGroupThenHasNotPermission($expected)
     {
@@ -97,9 +108,12 @@ class GuestSecurityTest  extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testGuestSecurityAddGroup
+     * @see GuestSecurityTest::testGuestSecurityAddGroup()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertTrue
      */
     public function testGuestSecurityAddGroup($expected)
     {
@@ -107,9 +121,12 @@ class GuestSecurityTest  extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testGuestSecurityAddGroupThenHasPermission
+     * @see GuestSecurityTest::testGuestSecurityAddGroupThenHasPermission()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertTrue
      */
     public function testGuestSecurityAddGroupThenHasPermission($expected)
     {

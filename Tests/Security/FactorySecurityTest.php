@@ -1,25 +1,26 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jochen.mandl
- * Date: 12.03.2015
- * Time: 19:49
- */
-
 namespace Tests\Security;
 
 use Security\FactorySecurity;
 
 /**
  * Class FactorySecurityTest
+ *
+ * @autor       -  jochen.mandl / mandl.js@googlemail.com
+ * @date        -  12.03.2015
+ * @time        -  19:49
+ * @description -
+ *
  * @package Tests\Security
  */
 class FactorySecurityTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @method testFactorySecurityAdminFactory
+     * @see FactorySecurityTest::testFactorySecurityAdminFactory()
      *
      * @throws \Exception
+     *
+     * @Assert assertInstanceOf
      */
     public function testFactorySecurityAdminFactory()
     {
@@ -27,9 +28,11 @@ class FactorySecurityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testFactorySecurityAdminFactorySecurity
+     * @see FactorySecurityTest::testFactorySecurityAdminFactorySecurity()
      *
      * @throws \Exception
+     *
+     * @Assert assertInstanceOf
      */
     public function testFactorySecurityAdminFactorySecurity()
     {
@@ -37,9 +40,11 @@ class FactorySecurityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testFactorySecurityModeratorFactory
+     * @see FactorySecurityTest::testFactorySecurityModeratorFactory()
      *
      * @throws \Exception
+     *
+     * @Assert assertInstanceOf
      */
     public function testFactorySecurityModeratorFactory()
     {
@@ -47,9 +52,11 @@ class FactorySecurityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testFactorySecurityModeratorFactorySecurity
+     * @see FactorySecurityTest::testFactorySecurityModeratorFactorySecurity()
      *
      * @throws \Exception
+     *
+     * @Assert assertInstanceOf
      */
     public function testFactorySecurityModeratorFactorySecurity()
     {

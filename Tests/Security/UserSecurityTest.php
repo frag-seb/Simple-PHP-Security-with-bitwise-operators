@@ -1,17 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jochen.mandl
- * Date: 13.03.2015
- * Time: 14:16
- */
-
 namespace Tests\Security;
 
 use Security\UserSecurity;
 
 /**
  * Class GuestSecurityTest
+ *
+ * @autor       -  jochen.mandl / mandl.js@googlemail.com
+ * @date        -  13.03.2015
+ * @time        -  14:16
+ * @description -
+ *
  * @package Tests\Security
  */
 class UserSecurityTest  extends \PHPUnit_Framework_TestCase
@@ -22,7 +21,7 @@ class UserSecurityTest  extends \PHPUnit_Framework_TestCase
     private $user;
 
     /**
-     * @method setUp
+     * @see UserSecurityTest::setUp()
      *
      */
     protected function setUp()
@@ -31,7 +30,7 @@ class UserSecurityTest  extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method expectedGroups
+     * @see UserSecurityTest::expectedGroups()
      *
      * @return array
      */
@@ -56,9 +55,12 @@ class UserSecurityTest  extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testUserSecurityHasNotPermissionReadUser
+     * @see UserSecurityTest::testUserSecurityHasNotPermissionReadUser()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertFalse
      */
     public function testUserSecurityHasNotPermissionReadUser($expected)
     {
@@ -66,9 +68,12 @@ class UserSecurityTest  extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testUserSecurityAddGroup
+     * @see UserSecurityTest::testUserSecurityAddGroup()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertTrue
      */
     public function testUserSecurityAddGroup($expected)
     {
@@ -76,9 +81,12 @@ class UserSecurityTest  extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testUserSecurityAddGroupThenHasPermission
+     * @see UserSecurityTest::testUserSecurityAddGroupThenHasPermission()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertTrue
      */
     public function testUserSecurityAddGroupThenHasPermission($expected)
     {

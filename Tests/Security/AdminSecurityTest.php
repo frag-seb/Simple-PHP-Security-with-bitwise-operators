@@ -1,17 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jochen.mandl
- * Date: 12.03.2015
- * Time: 19:49
- */
-
 namespace Tests\Security;
 
 use Security\AdminSecurity;
 
 /**
  * Class AdminSecurityTest
+ *
+ * @autor       -  jochen.mandl / mandl.js@googlemail.com
+ * @date        -  12.03.2015
+ * @time        -  19:49
+ * @description -
+ *
  * @package Tests\Security
  */
 class AdminSecurityTest extends \PHPUnit_Framework_TestCase
@@ -22,7 +21,7 @@ class AdminSecurityTest extends \PHPUnit_Framework_TestCase
     private $admin;
 
     /**
-     * @method setUp
+     * @see AdminSecurityTest::setUp()
      *
      */
     protected function setUp()
@@ -31,7 +30,7 @@ class AdminSecurityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method expectedGroups
+     * @see AdminSecurityTest::expectedGroups()
      *
      * @return array
      */
@@ -56,9 +55,12 @@ class AdminSecurityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testAdminSecurityHasPermissionWritePost
+     * @see AdminSecurityTest::testAdminSecurityHasPermissionWritePost()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertTrue
      */
     public function testAdminSecurityHasPermissionWritePost($expected)
     {
@@ -66,9 +68,12 @@ class AdminSecurityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testAdminSecurityHasPermissionReadPost
+     * @see AdminSecurityTest::testAdminSecurityHasPermissionReadPost()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertTrue
      */
     public function testAdminSecurityHasPermissionReadPost($expected)
     {
@@ -76,9 +81,12 @@ class AdminSecurityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testAdminSecurityHasPermissionDeletePost
+     * @see AdminSecurityTest::testAdminSecurityHasPermissionDeletePost()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertTrue
      */
     public function testAdminSecurityHasPermissionDeletePost($expected)
     {
@@ -86,9 +94,12 @@ class AdminSecurityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testAdminSecurityHasPermissionReadPosts
+     * @see AdminSecurityTest::testAdminSecurityHasPermissionReadPosts()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertTrue
      */
     public function testAdminSecurityHasPermissionReadPosts($expected)
     {
@@ -96,9 +107,12 @@ class AdminSecurityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testAdminSecurityHasPermissionWriteUser
+     * @see AdminSecurityTest::testAdminSecurityHasPermissionWriteUser()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertTrue
      */
     public function testAdminSecurityHasPermissionWriteUser($expected)
     {
@@ -106,9 +120,12 @@ class AdminSecurityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testAdminSecurityHasPermissionDeleteUser
+     * @see AdminSecurityTest::testAdminSecurityHasPermissionDeleteUser()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertTrue
      */
     public function testAdminSecurityHasPermissionDeleteUser($expected)
     {
@@ -116,9 +133,12 @@ class AdminSecurityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testAdminSecurityHasPermissionDeleteUsers
+     * @see AdminSecurityTest::testAdminSecurityHasPermissionDeleteUsers()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertTrue
      */
     public function testAdminSecurityHasPermissionDeleteUsers($expected)
     {
@@ -126,9 +146,12 @@ class AdminSecurityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testAdminSecurityHasPermissionReadUsers
+     * @see AdminSecurityTest::testAdminSecurityHasPermissionReadUsers()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertTrue
      */
     public function testAdminSecurityHasPermissionReadUsers($expected)
     {
@@ -136,9 +159,12 @@ class AdminSecurityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testAdminSecurityRemoveGroup
+     * @see AdminSecurityTest::testAdminSecurityRemoveGroup()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertTrue
      */
     public function testAdminSecurityRemoveGroup($expected)
     {
@@ -147,9 +173,12 @@ class AdminSecurityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testAdminSecurityRemoveGroupThenHasNotPermission
+     * @see AdminSecurityTest::testAdminSecurityRemoveGroupThenHasNotPermission()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertFalse
      */
     public function testAdminSecurityRemoveGroupThenHasNotPermission($expected)
     {
@@ -158,21 +187,26 @@ class AdminSecurityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testAdminSecurityAddGroup
+     * @see AdminSecurityTest::testAdminSecurityAddGroup()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertTrue
      */
     public function testAdminSecurityAddGroup($expected)
     {
         $this->admin->removeGroup($expected['READ_USERS']);
-
         $this->assertTrue($this->admin->addGroup($expected['READ_USERS']));
     }
 
     /**
-     * @method testAdminSecurityAddGroupThenHasPermission
+     * @see AdminSecurityTest::testAdminSecurityAddGroupThenHasPermission()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertTrue
      */
     public function testAdminSecurityAddGroupThenHasPermission($expected)
     {

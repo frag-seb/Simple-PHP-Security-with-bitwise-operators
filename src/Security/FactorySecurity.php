@@ -1,26 +1,28 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jochen.mandl
- * Date: 12.03.2015
- * Time: 20:31
- */
-
 namespace Security;
 
 use Security\Service\Factory;
 
 /**
  * Class FactorySecurity
+ * @autor       -  jochen.mandl / mandl.js@googlemail.com
+ * @date        -  12.03.2015
+ * @time        -  20:31
+ * @description -
+ *
  * @package Security
  */
 class FactorySecurity implements Factory
 {
     /**
-     * @method factory
+     * Creates an instance and returns
+     *
+     * @see FactorySecurity::factory()
+     * @uses FactorySecurity::factory($type)
      *
      * @param $type
      * @return mixed
+     *
      * @throws \Exception
      */
     public static function factory($type)

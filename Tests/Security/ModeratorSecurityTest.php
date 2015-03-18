@@ -1,17 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jochen.mandl
- * Date: 12.03.2015
- * Time: 20:02
- */
-
 namespace Tests\Security;
 
 use Security\ModeratorSecurity;
 
 /**
  * Class ModeratorSecurityTest
+ *
+ * @autor       -  jochen.mandl / mandl.js@googlemail.com
+ * @date        -  12.03.2015
+ * @time        -  20:02
+ * @description -
+ *
  * @package Tests\Security
  */
 class ModeratorSecurityTest extends \PHPUnit_Framework_TestCase
@@ -22,7 +21,7 @@ class ModeratorSecurityTest extends \PHPUnit_Framework_TestCase
     private $moderator;
 
     /**
-     * @method setUp
+     * @see ModeratorSecurityTest::setUp()
      *
      */
     protected function setUp()
@@ -31,7 +30,7 @@ class ModeratorSecurityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method expectedGroups
+     * @see ModeratorSecurityTest::expectedGroups()
      *
      * @return array
      */
@@ -56,9 +55,12 @@ class ModeratorSecurityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testModeratorSecurityHasNotPermissionWritePost
+     * @see ModeratorSecurityTest::testModeratorSecurityHasNotPermissionWritePost()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertFalse
      */
     public function testModeratorSecurityHasNotPermissionWritePost($expected)
     {
@@ -66,9 +68,12 @@ class ModeratorSecurityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testModeratorSecurityHasPermissionReadPost
+     * @see ModeratorSecurityTest::testModeratorSecurityHasPermissionReadPost()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertTrue
      */
     public function testModeratorSecurityHasPermissionReadPost($expected)
     {
@@ -76,9 +81,12 @@ class ModeratorSecurityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testModeratorSecurityHasPermissionDeletePost
+     * @see ModeratorSecurityTest::testModeratorSecurityHasPermissionDeletePost()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertTrue
      */
     public function testModeratorSecurityHasPermissionDeletePost($expected)
     {
@@ -86,9 +94,12 @@ class ModeratorSecurityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testModeratorSecurityHasNotPermissionReadPosts
+     * @see ModeratorSecurityTest::testModeratorSecurityHasNotPermissionReadPosts()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertFalse
      */
     public function testModeratorSecurityHasNotPermissionReadPosts($expected)
     {
@@ -96,9 +107,12 @@ class ModeratorSecurityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testModeratorSecurityHasNotPermissionWriteUser
+     * @see ModeratorSecurityTest::testModeratorSecurityHasNotPermissionWriteUser()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertFalse
      */
     public function testModeratorSecurityHasNotPermissionWriteUser($expected)
     {
@@ -106,9 +120,12 @@ class ModeratorSecurityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testModeratorSecurityHasPermissionDeleteUser
+     * @see ModeratorSecurityTest::testModeratorSecurityHasPermissionDeleteUser()
+     *
      * @dataProvider expectedGroups
-     * @param $expected
+     * @param $expected     *
+     *
+     * @Assert assertTrue
      */
     public function testModeratorSecurityHasPermissionDeleteUser($expected)
     {
@@ -116,9 +133,12 @@ class ModeratorSecurityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testModeratorSecurityHasNotPermissionDeleteUsers
+     * @see ModeratorSecurityTest::testModeratorSecurityHasNotPermissionDeleteUsers()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertFalse
      */
     public function testModeratorSecurityHasNotPermissionDeleteUsers($expected)
     {
@@ -126,9 +146,12 @@ class ModeratorSecurityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testModeratorSecurityHasPermissionReadUsers
+     * @see ModeratorSecurityTest::testModeratorSecurityHasPermissionReadUsers()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertTrue
      */
     public function testModeratorSecurityHasPermissionReadUsers($expected)
     {
@@ -136,9 +159,12 @@ class ModeratorSecurityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testModeratorSecurityRemoveGroup
+     * @see ModeratorSecurityTest::testModeratorSecurityRemoveGroup()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertTrue
      */
     public function testModeratorSecurityRemoveGroup($expected)
     {
@@ -146,9 +172,12 @@ class ModeratorSecurityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testModeratorSecurityRemoveGroupThenHasNotPermission
+     * @see ModeratorSecurityTest::testModeratorSecurityRemoveGroupThenHasNotPermission()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertFalse
      */
     public function testModeratorSecurityRemoveGroupThenHasNotPermission($expected)
     {
@@ -157,9 +186,12 @@ class ModeratorSecurityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testModeratorSecurityAddGroup
+     * @see ModeratorSecurityTest::testModeratorSecurityAddGroup()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertTrue
      */
     public function testModeratorSecurityAddGroup($expected)
     {
@@ -169,9 +201,12 @@ class ModeratorSecurityTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @method testModeratorSecurityAddGroupThenHasPermission
+     * @see ModeratorSecurityTest::testModeratorSecurityAddGroupThenHasPermission()
+     *
      * @dataProvider expectedGroups
      * @param $expected
+     *
+     * @Assert assertTrue
      */
     public function testModeratorSecurityAddGroupThenHasPermission($expected)
     {

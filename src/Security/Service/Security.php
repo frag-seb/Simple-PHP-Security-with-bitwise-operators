@@ -1,20 +1,18 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jochen.mandl
- * Date: 12.03.2015
- * Time: 21:13
- */
-
 namespace Security\Service;
 
 /**
  * Interface Security
+ *
+ * @autor       -  jochen.mandl / mandl.js@googlemail.com
+ * @date        -  12.03.2015
+ * @time        -  21:13
+ * @description -
+ *
  * @package Security\Service
  */
 interface Security
 {
-
     /**
      * @calculation:
      * (1<<0) = 0000000001 = 1
@@ -96,13 +94,15 @@ interface Security
 
     /**
      * Set authorization for the Group
-     * @method __construct
+     *
+     * @see Class::__construct()
+     * @uses nes Class()
      */
     public function __construct();
 
     /**
      * Adds a new authorization of Group added
-     * @method addGroup
+     * @see addGroup()
      *
      * @param $type
      * @param $group
@@ -112,7 +112,7 @@ interface Security
 
     /**
      * Removes a new authorization of Group added
-     * @method removeGroup
+     * @see removeGroup()
      *
      * @param $group
      * @return bool
@@ -121,7 +121,7 @@ interface Security
 
     /**
      * Checks if the authorization is available
-     * @method hasPermission
+     * @see hasPermission()
      *
      * @param $permission
      * @return bool

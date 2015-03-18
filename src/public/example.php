@@ -1,9 +1,11 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: jochen.mandl
- * Date: 12.03.2015
- * Time: 22:40
+ * @autor       -  jochen.mandl / mandl.js@googlemail.com
+ * @date        -  12.03.2015
+ * @time        -  21:13
+ * @description -
+ *
+ * @package Security\Service
  */
 require_once "../../bootstrap.php";
 

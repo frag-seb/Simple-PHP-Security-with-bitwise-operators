@@ -1,15 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jochen.mandl
- * Date: 12.03.2015
- * Time: 21:13
- */
-
 namespace Security\Service;
 
 /**
  * Class AbstractSecurity
+ *
+ * @autor       -  jochen.mandl / mandl.js@googlemail.com
+ * @date        -  12.03.2015
+ * @time        -  21:13
+ * @description -
+ *
  * @package Security\Service
  */
 class AbstractSecurity
@@ -21,16 +20,17 @@ class AbstractSecurity
 
     /**
      * Adds a new authorization of Groupe added
+     *
      * @example:  111011 | 000100 = 111111
      *
-     * @method addGroup
+     * @see Class::addGroup()
      *
      * @param $group
      * @return bool
      */
     public function addGroup($group)
     {
-        if($this->hasPermission($group)){
+        if ($this->hasPermission($group)) {
             return false;
         }
         $this->group |= $group;
@@ -39,16 +39,17 @@ class AbstractSecurity
 
     /**
      * Removes a new authorization of Group added
+     *
      * @example:  111111 ^ 000100 = 111011
      *
-     * @method removeGroup
+     * @see Class::removeGroup()
      *
      * @param $group
      * @return bool
      */
     public function removeGroup($group)
     {
-        if(!$this->hasPermission($group)){
+        if (!$this->hasPermission($group)) {
             return false;
         }
         $this->group ^= $group;
@@ -57,9 +58,10 @@ class AbstractSecurity
 
     /**
      * Checks if the authorization is available
+     *
      * @example:  (111111 & 000100) = 000100 === 000100
      *
-     * @method hasPermission
+     * @see Class::hasPermission()
      *
      * @param $permission
      * @return bool
